@@ -19,6 +19,10 @@ public class Main {
                 }
                 case 1 -> {
                     p1.pos = p1.pos + roll;
+                    if(p1.pos>100){
+                        p1.pos=(p1.pos-roll);
+                        continue;
+                    }
                     System.out.println("ladder, now position:" + p1.pos);
                 }
                 case 2 -> {
