@@ -11,18 +11,27 @@ public class Main {
         Random r=new Random();
         int roll=r.nextInt(6)+1;
         System.out.println("value in die:"+roll);
-        int option=r.nextInt(3);
-        switch(option){
-            case 0 -> System.out.println("NO CHANGE IN POSITION therefore value of pos:"+p1.pos);
-            case 1->{
-                p1.pos=p1.pos+roll;
-                System.out.println("ladder, now position:"+p1.pos);
+        while(p1.pos<=99) {
+            int option = r.nextInt(3);
+            switch (option) {
+                case 0 -> {
+                    System.out.println("NO CHANGE IN POSITION therefore value of pos:" + p1.pos);
+                }
+                case 1 -> {
+                    p1.pos = p1.pos + roll;
+                    System.out.println("ladder, now position:" + p1.pos);
+                }
+                case 2 -> {
+                    p1.pos = p1.pos - roll;
+                    if (p1.pos < 0) {
+                        p1.pos = 0;
+                    }
+                    System.out.println("Snake, now position:" + p1.pos);
+                }
+                default -> {
+                    break;
+                }
             }
-            case 2->{
-                p1.pos=p1.pos-roll;
-                System.out.println("Snake, now position:"+p1.pos);
-            }
-            default ->{break;}
         }
     }
 }
