@@ -13,9 +13,11 @@ public class Main {
         System.out.println("value in die:"+roll);
         while(p1.pos<=99) {
             int option = r.nextInt(3);
+            p1.countDice++;
+            System.out.print(" Dice count: "+p1.countDice);
             switch (option) {
                 case 0 -> {
-                    System.out.println("NO CHANGE IN POSITION therefore value of pos:" + p1.pos);
+                    System.out.println(" NO CHANGE IN POSITION therefore value of pos:" + p1.pos);
                 }
                 case 1 -> {
                     p1.pos = p1.pos + roll;
