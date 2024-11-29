@@ -1,14 +1,28 @@
 import java.lang.Math;
+import java.sql.SQLOutput;
 import java.util.Random;
-
+import java.util.Scanner;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
         Player p1=new Player();
         Random r=new Random();
         int roll=r.nextInt(6)+1;
         System.out.println("value in die:"+roll);
-
+        int option=r.nextInt(3);
+        switch(option){
+            case 0 -> System.out.println("NO CHANGE IN POSITION therefore value of pos:"+p1.pos);
+            case 1->{
+                p1.pos=p1.pos+roll;
+                System.out.println("ladder, now position:"+p1.pos);
+            }
+            case 2->{
+                p1.pos=p1.pos-roll;
+                System.out.println("Snake, now position:"+p1.pos);
+            }
+            default ->{break;}
+        }
     }
 }
